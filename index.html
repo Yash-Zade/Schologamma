@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="Sliderfinal.css">
+    <link rel="stylesheet" href="ForumCardsOld.css">
+    <link rel="stylesheet" href="AdminCards.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="stylesheet" href="footer.css"> -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://kit.fontawesome.com/6d0e978303.js" crossorigin="anonymous">
+    </script>
+    <title>Schologamma</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header section -->
+    <section class="header-section">
+        <header>
+            <div class="logo"><img src="./schologamma_-removebg-preview.png" alt=""></div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="" class="active">Home</a></li>
+                    <li><a href="">Committee</a></li>
+                    <li><a href="">Team</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Sign In</a></li>
+                    <!-- <button class="button1"><a href="#"></a></button> -->
+                </ul>
+            </nav>
+        </header>
+        <script>
+            hamburger = document.querySelector(".hamburger");
+            hamburger.onclick = function(){
+                navBar = document.querySelector(".nav-bar");
+                navBar.classList.toggle("active");
+            }
+        </script>
+    </section>
+    <!-- Slider Section  -->
+
+
+
+        <section class="sliderMain">
+            <div class="slider">
+                <div class="slide"><img
+                        src="./landing page.jpg"
+                        alt="First slide"></div>
+                <div class="slide"><img
+                        src="./connittee 2.jpg"
+                        alt="Second slide"></div>
+                <div class="slide"><img
+                        src="./event.jpg"
+                        alt="Third slide"></div>
+                <div class="slide"><img
+                        src="./committee.jpg"
+                        alt="Fourth slide"></div>
+                <div class="prev">❮</div>
+                <div class="next">❯</div>
+        </section>
+        </div>
+
+        <script>
+            let slides = document.querySelectorAll(".slide");
+            let prev = document.querySelector(".prev");
+            let next = document.querySelector(".next");
+            let index = 0;
+
+            // Add a variable to store the interval ID
+            let interval;
+
+            prev.addEventListener("click", function () {
+                slides[index].classList.remove("active");
+                index = (index - 1 + slides.length) % slides.length;
+                slides[index].classList.add("active");
+                // Clear the interval and restart it
+                clearInterval(interval);
+                startAutoSlide();
+            });
+
+            next.addEventListener("click", function () {
+                slides[index].classList.remove("active");
+                index = (index + 1) % slides.length;
+                slides[index].classList.add("active");
+                // Clear the interval and restart it
+                clearInterval(interval);
+                startAutoSlide();
+            });
+
+            // Add a function to start the auto slide
+            function startAutoSlide() {
+                // Set the interval to call the next button click every 3 seconds
+                interval = setInterval(function () {
+                    next.click();
+                }, 3000);
+            }
+
+            // Call the function when the page loads
+            startAutoSlide();
+        </script>
+
+    </section>
+
+    <!-- Eventcard section  -->
+    <section class="cards">
+        <section class="Event">
+
+            <div class="Event-img">
+                <!-- <iframe class="eventslider" src="eventslider.html" frameborder="0"></iframe> -->
+                <img src="./WhatsApp Image 2023-10-04 at 08.23.34_d36fbd3b.jpg" alt="event" class="cardimg">
+            </div>
+            <div class="Event-Content">
+                <h3 class="he1">Events</h3>
+                <p class="Event-Description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At excepturi eligendi veniam modi reiciendis commodi eveniet beatae assumenda minima iure. </p>
+                <!-- button --> 
+                <div class="event-button">
+                    <button onClick={console.log(click)} class="more">
+                        More
+                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_f_618_1123)">
+                          <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z" fill="url(#paint0_linear_618_1123)"/>
+                        </g>
+                        <defs>
+                          <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_618_1123"/>
+                          </filter>
+                          <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002" x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="white" stop-opacity="0.6"/>
+                            <stop offset="1" stop-color="white" stop-opacity="0.05"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Committee card -->
+
+        <section class="Committee">
+            <div class="Committee-img">
+                
+                <img src="./WhatsApp Image 2023-10-04 at 08.23.34_d36fbd3b.jpg" alt="Committee" class="cardimg">
+            </div>
+            <div class="Committee-Content">
+                <h3 class="he2">Committees</h3>
+                <p class="Committee-Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo obcaecati cupiditate ex distinctio officiis voluptatibus dolores dolorem odit libero placeat!</p>
+                <!-- button -->
+                <div class="committee-button">
+                    <button onClick={console.log(click)} class="more">
+                        More
+                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_f_618_1123)">
+                          <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z" fill="url(#paint0_linear_618_1123)"/>
+                        </g>
+                        <defs>
+                          <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_618_1123"/>
+                          </filter>
+                          <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002" x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="white" stop-opacity="0.6"/>
+                            <stop offset="1" stop-color="white" stop-opacity="0.05"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      </button>
+               </div>
+            </div>
+        </section>
+
+        <!-- Teams card  -->
+
+        <section class="Teams">
+            <div class="Teams-img">
+                
+                <img src="./WhatsApp Image 2023-10-04 at 08.23.34_d36fbd3b.jpg" alt="Teams" class="cardimg">
+            </div>
+            <div class="Teams-Content">
+                <h3 class="he1">Teams</h3>
+                <p class="Teams-Description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam labore quibusdam maxime saepe, illum autem quod aut aliquid explicabo sequi! </p>
+                <!-- button -->
+                <div class="teams-button">
+                    <button onClick={console.log(click)} class="more">
+                        More
+                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_f_618_1123)">
+                          <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z" fill="url(#paint0_linear_618_1123)"/>
+                        </g>
+                        <defs>
+                          <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_618_1123"/>
+                          </filter>
+                          <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002" x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="white" stop-opacity="0.6"/>
+                            <stop offset="1" stop-color="white" stop-opacity="0.05"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      </button>
+               </div>
+            </div>
+        </section>
+    </section>
+
+
+
+    <!-- Admin Card  -->
+    
+    <section class="adhead">
+        <h3>Our Admins</h3>
+    </section>
+
+
+    <section class="adcard">
+      <div class="card">
+        <div class="img-bx">
+          <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+        </div>
+        <div class="content">
+          <div class="detail">
+            <h2>Emilia Roy<br /><span>Senior Designer</span></h2>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card">
+          <div class="img-bx">
+            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+          </div>
+          <div class="content">
+            <div class="detail">
+              <h2>Emilia Roy<br /><span>Senior Designer</span></h2>
+              <ul class="sci">
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card">
+          <div class="img-bx">
+            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+          </div>
+          <div class="content">
+            <div class="detail">
+              <h2>Emilia Roy<br /><span>Senior Designer</span></h2>
+              <ul class="sci">
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card">
+          <div class="img-bx">
+            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+          </div>
+          <div class="content">
+            <div class="detail">
+              <h2>Emilia Roy<br /><span>Senior Designer</span></h2>
+              <ul class="sci">
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <script
+        src="https://kit.fontawesome.com/66aa7c98b3.js"
+        crossorigin="anonymous"></script>
+    </section>
+
+    
+    <!-- Footer Section  -->
+
+    <footer class="footerbody">
+
+        <div class="row">
+            <div class="col">
+              <img
+                src="./schologamma_-removebg-preview.png"
+                class="footerlogo"
+                alt="logo"/>
+              <p class="data">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+                obcaecati facilis aspernatur quasi libero fugiat at illum fuga vel
+                delectus. Nostrum, laboriosam fugiat. Unde rem eum sed libero magni
+                odio dicta vitae sequi vel nisi tempora quas natus, exercitationem
+                corrupti.
+              </p>
+            </div>
+            <div class="col">
+              <h3>Address</h3>
+              <p>Valni Near Hanuman Temple, Borgoan, Kalmeshwar Road, Phata</p>
+              <p>Nagpur, Maharashtra 441501</p>
+              <p class="email1">schologamma7@jdcoem.com</p>
+              <h4>+91 - 0123456769</h4>
+            </div>
+            <div class="col">
+              <h3>links</h3>
+              <ul class="link">
+                <li><a href="XXX">Home</a></li>
+                <li><a href="XXX">comittees</a></li>
+                <li><a href="XXX">About us</a></li>
+                <li><a href="XXX">Contact</a></li>
+                <li><a href="XXX">Sign up</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Report/Feedback</h3>
+              <form>
+                <i class="fa-solid fa-message"></i>
+                <input type="email" placeholder="Enter your e-mail" required />
+                <button type="submit">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+              <div class="socialElements">
+                <button>
+                  <i class="fa-brands fa-square-instagram"><a href="xxxx"></a></i>
+                </button>
+                <button>
+                  <i class="fa-brands fa-google"><a href="xxxx"></a></i>
+                </button>
+                <button>
+                  <i class="fa-brands fa-facebook"></i><a href="xxxx"></a>
+                </button>
+                <button>
+                  <i class="fa-brands fa-linkedin"></i><a href="xxxx"></a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+
+    </footer>
+
+
+</body>
+
+</html>
